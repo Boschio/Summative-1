@@ -1,7 +1,7 @@
 package com.company.Summative1.models;
 
-public class Word {
-    public Word() {
+public class Answer {
+    public Answer() {
 
     }
 }

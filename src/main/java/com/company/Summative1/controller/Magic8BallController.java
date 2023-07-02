@@ -1,6 +1,6 @@
 package com.company.Summative1.controller;
 
-import com.company.Summative1.models.Magic8Ball;
+import com.company.Summative1.models.Answer;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,9 +12,9 @@ public class Magic8BallController {
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
-    public Magic8Ball getMagic(String question) {
+    public Answer getMagic(String question) {
 
-        return new Magic8Ball();
+        return new Answer();
     }
 
 }
