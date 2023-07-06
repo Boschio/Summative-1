@@ -5,6 +5,7 @@ import com.company.Summative1.models.Question;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -23,11 +24,11 @@ public class Magic8BallController {
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
-    @ResponseBody
+    //@ResponseBody
     public Answer getMagicAnswer(@RequestBody Question question) {
         int index = (int) (Math.random() * responses.size());
         String answer = responses.get(index);
-        Answer response = new Answer(index, question.getQuestion(), answer);
+        Answer response = new Answer(index,question.getQuestion(), answer);
         return response;
     }
 
