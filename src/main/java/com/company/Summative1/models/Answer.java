@@ -7,6 +7,11 @@ public class Answer {
 
     public Answer(){}
 
+    public Answer(int id, String answer){
+        this.id = id;
+        this.answer = answer;
+    }
+
     public Answer(int id, String question, String answer){
         this.question = question;
         this.id = id;
