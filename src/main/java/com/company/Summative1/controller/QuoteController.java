@@ -31,8 +31,9 @@ public class QuoteController {
     @RequestMapping(value = "/quote", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Quote getQuote() {
-        int index = (int) (Math.random() * 10);
+        int index = (int) (Math.random() * quotes.size());
         Quote result = quotes.get(index);
+        result.setId(index);
         return result;
     }
 
