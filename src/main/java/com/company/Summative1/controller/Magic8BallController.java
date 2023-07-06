@@ -25,10 +25,17 @@ public class Magic8BallController {
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     //@ResponseBody
-    public Answer getMagicAnswer(@RequestBody Question question) {
+    public Answer getMagicAnswer(@RequestBody(required = false) Question question) {
         int index = (int) (Math.random() * responses.size());
         String answer = responses.get(index);
-        Answer response = new Answer(index,question.getQuestion(), answer);
+        Answer response;
+
+        if(question != null){
+            response = new Answer(index,question.getQuestion(), answer);
+        }
+        else{
+            response = new Answer(index,answer);
+        }
         return response;
     }
 
