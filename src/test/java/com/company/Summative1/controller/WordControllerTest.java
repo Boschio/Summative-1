@@ -15,11 +15,6 @@ public class WordControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @BeforeEach
-    public void setUp() {
-
-    }
-
     @Test
     public void shouldGetAWord() throws Exception {
         mockMvc.perform(get("/word"))
