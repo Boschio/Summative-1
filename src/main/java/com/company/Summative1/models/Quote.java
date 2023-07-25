@@ -1,5 +1,7 @@
 package com.company.Summative1.models;
 
+import java.util.Objects;
+
 public class Quote {
 
     private int id;
@@ -34,6 +36,29 @@ public class Quote {
 
     public String getQuote() {
         return quote;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Quote quote = (Quote) o;
+        return getId() == quote.getId() &&
+                Objects.equals(getAuthor(), quote.getAuthor()) &&
+                Objects.equals(getQuote(), quote.getQuote());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, author, quote);
+    }
+
+    @Override
+    public String toString() {
+        return "Quote{" +
+                "id=" + id +
+                ", author='" + author + '\'' +
+                ", quote='" + quote + '\'' +
+                '}';
     }
 }
 
